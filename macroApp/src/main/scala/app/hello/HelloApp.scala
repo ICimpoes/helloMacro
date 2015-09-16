@@ -1,4 +1,4 @@
-package app.runHello
+package app.hello
 
 import java.util.Date
 

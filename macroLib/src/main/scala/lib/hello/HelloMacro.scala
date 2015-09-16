@@ -9,6 +9,7 @@ object HelloMacro {
 
   def sayHello: String = macro sayHelloMacroImpl
 
+  //Must be public
   def sayHelloMacroImpl(c: Context): c.Tree = {
     import c.universe._
 
