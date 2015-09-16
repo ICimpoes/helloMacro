@@ -7,9 +7,9 @@ val commonSettings = Seq(
 
   scalacOptions ++= Seq("-deprecation", "-feature"),
 
-  unmanagedSourceDirectories in Compile := List((scalaSource in Compile).value),
-
-  unmanagedSourceDirectories in Test := List((scalaSource in Test).value),
+//  unmanagedSourceDirectories in Compile := List((scalaSource in Compile).value),
+//
+//  unmanagedSourceDirectories in Test := List((scalaSource in Test).value),
 
   libraryDependencies ++= Seq(
     "org.scala-lang" % "scala-reflect" % scalaVersion.value

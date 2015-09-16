@@ -1,4 +1,4 @@
-package hello
+package lib.hello
 
 import java.util.Date
 
