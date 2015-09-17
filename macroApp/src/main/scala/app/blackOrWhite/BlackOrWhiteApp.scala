@@ -4,8 +4,14 @@ import lib.blackOrWhite.{WhiteBoxMacro, BlackBoxMacro}
 
 object BlackOrWhiteApp extends App{
 
-  val a: Some[String] = BlackBoxMacro.getValueFromWhiteBox("value")
+  //This one doesn't compile
+  //val blackOption: Some[String] = BlackBoxMacro.getValueFromBlackBox("value")
 
-  val b: Some[String] = WhiteBoxMacro.getValueFromWhiteBox("value")
+  val blackOption: Option[String] = BlackBoxMacro.getValueFromBlackBox("value")
+
+  val whiteOption: Some[String] = WhiteBoxMacro.getValueFromWhiteBox("value")
+
+  println(blackOption)
+  println(whiteOption)
 
 }
