@@ -13,7 +13,7 @@ object Quasiquotes {
     val typeA = weakTypeOf[A]
     val caseCause1 = cq"""_ : $typeA => true"""
     val default = cq"""_ => false"""
- 
+
     val cases = List(caseCause1, default)
 
     val result = q"""

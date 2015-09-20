@@ -1,4 +1,3 @@
-import java.util.Date
 import scala.reflect.runtime.universe._
 val q = q"1 + 1"
 val C =
@@ -26,3 +25,8 @@ showRaw(reify{val now = "a"; s"Hi now is $now"}.tree)
 scala.Some.apply[Int](5) match {
   case _ => println("unknown")
 }
+
+
+showRaw(reify{val s1 = "s1"
+  val s2 = "s2"
+print(s"$s2 + $s1")}.tree)

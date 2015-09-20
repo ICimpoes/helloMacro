@@ -1,7 +1,7 @@
 package lib.blackOrWhite
 
-import scala.reflect.macros.blackbox.{Context => BlackBoxContext}
 import scala.language.experimental.macros
+import scala.reflect.macros.blackbox.{Context => BlackBoxContext}
 
 object BlackBoxMacro {
 

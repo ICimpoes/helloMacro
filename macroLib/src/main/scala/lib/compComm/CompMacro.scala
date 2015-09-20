@@ -1,7 +1,7 @@
 package lib.compComm
 
-import scala.reflect.macros.blackbox
 import scala.language.experimental.macros
+import scala.reflect.macros.blackbox
 
 object CompMacro {
 
@@ -24,7 +24,6 @@ object CompMacro {
     c.warning(c.enclosingPosition, "WARNING!")
     q""
   }
-
 
 
 }

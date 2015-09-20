@@ -1,6 +1,6 @@
 package app.blackOrWhite
 
-import lib.blackOrWhite.{WhiteBoxMacro, BlackBoxMacro}
+import lib.blackOrWhite.{BlackBoxMacro, WhiteBoxMacro}
 
 object BlackOrWhiteApp extends App{
 

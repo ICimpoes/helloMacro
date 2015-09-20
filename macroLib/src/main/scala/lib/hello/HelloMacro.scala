@@ -2,8 +2,8 @@ package lib.hello
 
 import java.util.Date
 
-import scala.reflect.macros.blackbox.Context
 import scala.language.experimental.macros
+import scala.reflect.macros.blackbox.Context
 
 object HelloMacro {
 
