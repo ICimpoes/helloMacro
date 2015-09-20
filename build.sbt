@@ -19,3 +19,6 @@ val commonSettings = Seq(
 lazy val macroLib = project.in(file("macroLib")).settings(commonSettings: _*)
 
 lazy val macroApp = project.in(file("macroApp")).settings(commonSettings: _*).dependsOn(macroLib)
+
+
+addSbtPlugin("com.github.mpeltonen" % "sbt-idea" % "1.6.0")
