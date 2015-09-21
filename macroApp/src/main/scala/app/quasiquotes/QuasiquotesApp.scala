@@ -4,6 +4,6 @@ import lib.quasiquotes.Quasiquotes
 
 object QuasiquotesApp extends App {
 
-  println(Quasiquotes.isTypeOf[Int](1))
+  Quasiquotes.compare(0, 0)
 
 }

@@ -14,6 +14,7 @@ object ASTMacro {
     val Literal(Constant(s1: String)) = string1.tree
     val Literal(Constant(s2: String)) = string2.tree
 
+    //print(s2 + s2)
     Apply(Ident(TermName("print")), List(Apply(Select(Literal(Constant(s2)), TermName("$plus")), List(Literal(Constant(s1))))))
   }
 

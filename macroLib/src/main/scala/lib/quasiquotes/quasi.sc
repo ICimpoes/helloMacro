@@ -18,15 +18,8 @@ showRaw(reify{def xPlus1(x: Int) = x + 1}.tree)
 //showRaw(pq"List(a, b)")
 //showRaw(q"List(a, b)")
 
-
-showRaw(reify{val now = "a"; s"Hi now is $now"}.tree)
-
-
-scala.Some.apply[Int](5) match {
-  case _ => println("unknown")
-}
+val intType = tq"Int"
+showRaw(pq"(x: $intType, y: $intType)")
+showCode(pq"(x: $intType, y: $intType)")
 
 
-showRaw(reify{val s1 = "s1"
-  val s2 = "s2"
-print(s"$s2 + $s1")}.tree)

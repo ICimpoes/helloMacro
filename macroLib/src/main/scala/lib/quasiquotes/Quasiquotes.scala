@@ -5,19 +5,22 @@ import scala.reflect.macros.blackbox
 
 object Quasiquotes {
 
-  def isTypeOf[A](a: Any): Boolean = macro isTypeOfMacroImpl[A]
+  def compare(a: Any, b: Any): Unit = macro compareMacroImpl
 
-  def isTypeOfMacroImpl[A: c.WeakTypeTag](c: blackbox.Context)(a: c.Expr[Any]) = {
+  def compareMacroImpl(c: blackbox.Context)(a: c.Expr[Any], b: c.Expr[Any]) = {
     import c.universe._
 
-    val typeA = weakTypeOf[A]
-    val caseCause1 = cq"""_ : $typeA => true"""
-    val default = cq"""_ => false"""
+    val intType = tq"Int"
+    val pattern = pq"(x: $intType, y: $intType)"
+    val gtCase = cq"""$pattern if (x > y) => println(x + " > " + y)"""
+    val eCase = cq"""$pattern if (x == y) => println(x + " == " + y)"""
+    val ltCase = cq"""$pattern if (x < y) => println(x + " < " + y)"""
 
-    val cases = List(caseCause1, default)
+    val cases = List(gtCase, eCase, ltCase)
 
+    //it's like String interpolation, but we're not building a string, we're building AST
     val result = q"""
-       $a match { case ..$cases }
+       ($a, $b) match { case ..$cases }
      """
     println(showCode(result))
 
