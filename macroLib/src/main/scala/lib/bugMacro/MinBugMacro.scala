@@ -7,6 +7,9 @@ object MinBugMacro {
 
   def printlnMin(x: Int, y: Int): Unit = macro minMacroImpl
 
+  /**
+   * next -> [[lib.compComm.CompMacro]]
+   */
   def minMacroImpl(c: blackbox.Context)(x: c.Expr[Int], y: c.Expr[Int]) = {
     import c.universe._
     q"""

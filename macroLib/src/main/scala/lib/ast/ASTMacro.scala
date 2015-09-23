@@ -7,7 +7,9 @@ object ASTMacro {
 
   def swapPrint(string1: String, string2: String): Unit = macro printMacroImpl
 
-  //Must be public
+  /**
+   * next -> [[lib.hello.HelloMacro]]
+   */
   def printMacroImpl(c: blackbox.Context)(string1: c.Expr[String], string2: c.Expr[String]) = {
     import c.universe._
 

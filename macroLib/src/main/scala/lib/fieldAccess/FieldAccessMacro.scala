@@ -16,8 +16,6 @@ object FieldAccessMacro {
 
     val result = tpA.decls.find { field => field.isMethod && field.asMethod.isCaseAccessor && field.name == TermName(name) }
 
-    println(tpA.decls)
-
     result.fold[c.Tree]( c.abort(c.enclosingPosition, s"No such field $name") ){
       _ => q"""println($obj.${TermName(name)})"""
     }

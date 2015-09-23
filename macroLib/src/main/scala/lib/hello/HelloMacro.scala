@@ -9,7 +9,9 @@ object HelloMacro {
 
   def sayHello: String = macro sayHelloMacroImpl
 
-  //Must be public
+  /**
+   * next -> [[lib.blackOrWhite.BlackBoxMacro]]
+   */
   def sayHelloMacroImpl(c: Context): c.Tree = {
     import c.universe._
 

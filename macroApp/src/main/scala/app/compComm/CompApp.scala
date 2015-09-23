@@ -4,6 +4,6 @@ import lib.compComm.CompMacro
 
 object CompApp extends App {
 
-//  CompMacro.warn
-//  CompMacro.mustBePositive(-1)
+  CompMacro.warn
+  CompMacro.mustBePositive(0)
 }

@@ -5,6 +5,9 @@ import scala.reflect.macros.blackbox
 
 object CompMacro {
 
+  /**
+   * next -> [[lib.runtimeException.RuntimeExMacro]]
+   */
   def mustBePositive(x: Int): Unit = macro abortMacroImpl
 
   def warn: Unit = macro warnMacroImpl

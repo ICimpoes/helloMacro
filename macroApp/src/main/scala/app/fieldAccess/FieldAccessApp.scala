@@ -1,7 +1,12 @@
-package app.accessField
+package app.fieldAccess
 
 import lib.fieldAccess.FieldAccessMacro
 import lib.lifting.Person
+
+/**
+ * next -> https://github.com/milessabin/shapeless/blob/master/core/src/main/scala/shapeless/generic.scala
+ * next -> http://wix.github.io/accord/
+ */
 
 object FieldAccessApp extends App {
 

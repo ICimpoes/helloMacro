@@ -7,6 +7,9 @@ object Quasiquotes {
 
   def compare(a: Any, b: Any): Unit = macro compareMacroImpl
 
+  /**
+   * next -> [[lib.lifting.Person]]
+   */
   def compareMacroImpl(c: blackbox.Context)(a: c.Expr[Any], b: c.Expr[Any]) = {
     import c.universe._
 
@@ -18,7 +21,6 @@ object Quasiquotes {
 
     val cases = List(gtCase, eCase, ltCase)
 
-    //it's like String interpolation, but we're not building a string, we're building AST
     val result = q"""
        ($a, $b) match { case ..$cases }
      """

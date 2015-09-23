@@ -1,6 +1,6 @@
 package app
 
-package object accessField {
+package object fieldAccess {
 
   case class TestClass(a: String, b: Int, c: Option[Int] = None) {
     def method = "method"
