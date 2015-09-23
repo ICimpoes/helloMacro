@@ -12,16 +12,15 @@ object FieldAccessMacro {
 
     val tpA = weakTypeOf[A]
 
-    val Literal(Constant(s: String)) = reify{fieldName.splice}.tree
+    val Literal(Constant(name: String)) = fieldName.tree
 
-    val result = tpA.decls.find { field => field.isMethod && field.asMethod.isCaseAccessor && field.name == TermName(s) }
+    val result = tpA.decls.find { field => field.isMethod && field.asMethod.isCaseAccessor && field.name == TermName(name) }
 
-    val a = result.fold[c.Tree]( q"""println("No such field " + $s)""" ){ _ => q"""println($obj.${TermName(s)})""" }
+    println(tpA.decls)
 
-    println(showCode(a))
-    println(showRaw(a))
-
-    a
+    result.fold[c.Tree]( c.abort(c.enclosingPosition, s"No such field $name") ){
+      _ => q"""println($obj.${TermName(name)})"""
+    }
 
   }
 }

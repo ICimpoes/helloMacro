@@ -5,14 +5,17 @@ import lib.lifting.Person
 
 object FieldAccessApp extends App {
 
-  implicit class rich[T](val a: T) {
-    def getByFieldName(fieldName: String) = {
-      FieldAccessMacro.accessField(person, fieldName)
-    }
-  }
-
   val person = Person("OldBob", 118)
+  val testInstance = TestClass("aa", 1)
 
-  person.getByFieldName("name")
+  FieldAccessMacro.accessField(person, "age")
+  FieldAccessMacro.accessField(person, "name")
+  FieldAccessMacro.accessField(testInstance, "a")
+  FieldAccessMacro.accessField(testInstance, "c")
+
+  // These ones don't compile
+//  FieldAccessMacro.accessField(person, "asdasda")
+//  FieldAccessMacro.accessField(testInstance, "method")
+//  FieldAccessMacro.accessField(testInstance, "value")
 
 }
